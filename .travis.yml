@@ -13,10 +13,14 @@ python:
   - "3.6"
 
 script:
-  - python -m pytest vasp tests
+  - python -m pytest vasp tests --cov=vasp
 
 install:
   - pip install setuptools
+  - pip install python-coveralls
   - pip install pytest
+  - pip install pytest-cov
   - pip install .
 
+after_success:
+  - coveralls

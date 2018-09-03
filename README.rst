@@ -1,4 +1,4 @@
-Python Vasp |Build Status| |Pypi|
+Python Vasp |Build Status| |Coveralls| |Pypi|
 ===========
 
 Obscure vasp parser written in python... ?
@@ -7,3 +7,5 @@ Obscure vasp parser written in python... ?
    :target: https://badge.fury.io/py/python-vasp
 .. |Build Status| image:: https://travis-ci.org/alejandrogallo/python-vasp.svg?branch=master
    :target: https://travis-ci.org/alejandrogallo/python-vasp
+.. |Coveralls| image:: https://coveralls.io/repos/github/alejandrogallo/python-vasp/badge.svg?branch=master
+   :target: https://coveralls.io/github/alejandrogallo/python-vasp?branch=master
