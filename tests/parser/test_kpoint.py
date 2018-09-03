@@ -36,3 +36,47 @@ def test_basic_kpoint():
     assert(kpoint.bands[0].energy == -4.1306e2)
     assert(kpoint.bands[-1].number == 8)
     assert(kpoint.bands[-1].energy == 13.2218)
+
+
+def test_bad_kpoint():
+    data = [
+     "                                                  \n",
+     " k-point     123 ;       0.5000    0.5000    0.5000 \n",
+     " band No.  band energies     occupation           \n",
+     " 1      -4.1306e2      2.00000                      \n",
+     "                                                  \n",
+    ]
+    try:
+        kpoint = Kpoint(data)
+    except SyntaxError:
+        assert(True)
+    else:
+        assert(False)
+
+    data = [
+     "                                                  \n",
+     " k-point     123 :       0.5000    0.5000    0.5000 \n",
+     " band No   band energies     occupation           \n",
+     " 1      -4.1306e2      2.00000                      \n",
+     "                                                  \n",
+    ]
+    try:
+        kpoint = Kpoint(data)
+    except SyntaxError:
+        assert(True)
+    else:
+        assert(False)
+
+    data = [
+     "                                                  \n",
+     " k-point     123 :       0.5000    0.5000    0.5000 \n",
+     " band No.  band energies     occupation           \n",
+     " %      -4.1306e2      2.00000                      \n",
+     "                                                  \n",
+    ]
+    try:
+        kpoint = Kpoint(data)
+    except SyntaxError:
+        assert(True)
+    else:
+        assert(False)
