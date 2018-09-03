@@ -26,3 +26,4 @@ def clean_lines(lines):
     # takeout empty lines
     lines = list(filter(lambda x: x, lines))
 
+    return lines
