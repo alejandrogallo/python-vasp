@@ -1,0 +1,20 @@
+language: python
+
+os:
+  - linux
+  - osx
+
+python:
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  - "3.6"
+
+script:
+  - python -m pytest vasp tests
+
+install:
+  - pip install setuptools
+  - pip install pytest
+  - pip install .
+
