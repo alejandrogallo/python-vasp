@@ -5,13 +5,16 @@ from vasp.parser.kpoint import Kpoint
 
 class BandStructure:
 
-    def __init__(self, outcar):
+    def __init__(self, outcar=None):
+        """In the future, let also the posibility of reading from vasprun.xml
+        """
         self.kpoints = []
-        with open(outcar) as fd:
-            self.lines = fd.readlines()
-        self.parse()
+        if outcar is not None:
+            with open(outcar) as fd:
+                self.lines = fd.readlines()
+            self.parse_outcar()
 
-    def parse(self):
+    def parse_outcar(self):
         self.lines = vasp.utils.clean_lines(self.lines)
 
         spin = None

@@ -9,7 +9,7 @@ def test_ispin_1():
     )
     assert(os.path.exists(outcarpath))
 
-    bs = BandStructure(outcarpath)
+    bs = BandStructure(outcar=outcarpath)
     assert(bs is not None)
 
     empty_lines = list(filter(lambda x: not x, bs.lines))
@@ -30,7 +30,7 @@ def test_ispin_2():
     )
     assert(os.path.exists(outcarpath))
 
-    bs = BandStructure(outcarpath)
+    bs = BandStructure(outcar=outcarpath)
     assert(bs is not None)
 
     spin_1 = [k for k in bs.kpoints if k.bands[0].spin == 1]
