@@ -32,8 +32,10 @@ def test_basic_kpoint():
 
     # bands
     assert(len(kpoint.bands) == 8)
+    assert(kpoint.bands[0].spin == None)
     assert(kpoint.bands[0].number == 1)
     assert(kpoint.bands[0].energy == -4.1306e2)
+    assert(kpoint.bands[-1].spin == None)
     assert(kpoint.bands[-1].number == 8)
     assert(kpoint.bands[-1].energy == 13.2218)
 

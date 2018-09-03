@@ -3,13 +3,15 @@ import vasp.utils
 import vasp.parser.regex
 import re
 
-Band = namedtuple('Band', ['number', 'energy', 'occupation'])
+Band = namedtuple('Band', ['number', 'energy', 'occupation', 'spin'])
 
 
 class Kpoint:
-    def __init__(self, lines):
+    def __init__(self, lines, spin=None):
         """
         Parse a kpoint text in a list of lines, e.g.:
+        The spin has to be optional since we do not know in advance from
+        the k-point chunk if it's spin 1 or 2, in vasp parlance.
 
              k-point     1 :       0.5000    0.5000    0.5000
               band No.  band energies     occupation
@@ -27,6 +29,7 @@ class Kpoint:
         """
         self.lines = lines
         self.value = None
+        self.spin = spin
         self.index = None
         self.bands = []
         self.parse()
@@ -61,10 +64,12 @@ class Kpoint:
                     'Error parsing band, check it!\n'
                     'band = "{0}"'.format(self.lines[i])
                 )
+
             self.bands.append(
                 Band(
                     number=int(m.group(1)),
                     energy=float(m.group(2)),
                     occupation=float(m.group(3)),
+                    spin=self.spin,
                 )
             )
