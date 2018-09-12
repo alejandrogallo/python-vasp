@@ -1,4 +1,4 @@
-Python Vasp |Build Status| |Coveralls| |Pypi|
+Python Vasp |Build Status| |Coveralls| |Pypi| |Code Quality|
 ===========
 
 Obscure vasp parser written in python... ?
@@ -9,3 +9,5 @@ Obscure vasp parser written in python... ?
    :target: https://travis-ci.org/alejandrogallo/python-vasp
 .. |Coveralls| image:: https://coveralls.io/repos/github/alejandrogallo/python-vasp/badge.svg?branch=master
    :target: https://coveralls.io/github/alejandrogallo/python-vasp?branch=master
+.. |Code Quality| image:: https://img.shields.io/lgtm/grade/python/g/alejandrogallo/python-vasp.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/alejandrogallo/python-vasp/context:python
