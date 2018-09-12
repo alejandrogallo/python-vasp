@@ -32,7 +32,7 @@ class Poscar:
         self.symbols = atom_header.findall(self.lines.pop(0))
         if not self.symbols:
             raise SyntaxError(
-                "Line '{0}' is not the description of the atoms in the poscar"
+                "There is no description of the atoms in the poscar\n"
                 "Please write explicitly the atoms appearing in the poscar"
             )
 

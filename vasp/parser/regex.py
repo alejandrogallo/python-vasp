@@ -15,7 +15,7 @@ end_section = re.compile(r'-' * 30)
 real_number = re.compile(r'(\+?-?\d\.?\d*[Ee]?\+?-?\d*)')
 
 # For poscar recognition
-atom_header = re.compile(r' *(\w+) *')
+atom_header = re.compile(r' *([a-zA-Z]+) *')
 
 
 def parse_vector(line, length, dtype):

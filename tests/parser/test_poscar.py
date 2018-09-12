@@ -24,3 +24,16 @@ def test_direct():
     assert(poscar.modeline == 'Direct')
     assert(len(poscar.coordinates) == 2)
 
+def test_direct_nosymbols():
+    # There should always be symbols
+    path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        'data', 'poscar_simple_direct_nosymbols'
+    )
+
+    try:
+        poscar = Poscar(path)
+    except SyntaxError:
+        assert(True)
+    else:
+        assert(False)
