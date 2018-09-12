@@ -12,18 +12,23 @@ spin_component_header = re.compile(r"^spin component ([12])$")
 # This is for the outcar, every section seems to end by a long series of '-'
 end_section = re.compile(r'-' * 30)
 
-vector = re.compile(
-    r'^ *(\+?-?\d.?\d*E?\+?-?\d*) *'
-    r'(\+?-?\d.?\d*E?\+?-?\d*) *'
-    r'(\+?-?\d.?\d*E?\+?-?\d*) *$'
-)
+real_number = re.compile(r'(\+?-?\d\.?\d*[Ee]?\+?-?\d*)')
+
+# For poscar recognition
+atom_header = re.compile(r' *(\w+) *')
 
 
-def parse_vector(line):
-    m = vector.match(line)
+def parse_vector(line, length, dtype):
+    m = real_number.findall(line)
     if not m:
         raise SyntaxError(
             'Line "{0}" does not seem to be a vector'.format(line)
         )
+    elif len(m) != length:
+        raise SyntaxError(
+            'Line "{0}" is a longer vector than expected ({1})'.format(
+                line, length
+            )
+        )
     else:
-        return [float(m.group(i + 1)) for i in range(3)]
+        return [dtype(m[i]) for i in range(length)]
