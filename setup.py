@@ -6,7 +6,7 @@ with open('README.rst') as fd:
 
 setup(
     name='python-vasp',
-    version='0.0.1',
+    version='0.0.2',
     author='Alejandro Gallo',
     author_email='aamsgallo@gmail.com',
     license='GPLv3',
@@ -29,7 +29,7 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Topic :: Utilities',
     ],
-    description='Download papers from scihub using papis',
+    description='Yet another vasp parser, but unit tested',
     long_description=long_description,
     keywords=[
         'vasp', 'electronic-structure', 'quantum', 'physics'
