@@ -1,6 +1,5 @@
 import vasp.utils
-from vasp.parser.regex import parse_vector, atom_header, real_number
-import re
+from vasp.parser.regex import parse_vector, atom_header
 
 
 class Poscar:

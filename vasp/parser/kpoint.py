@@ -1,7 +1,6 @@
 from collections import namedtuple
 import vasp.utils
 import vasp.parser.regex
-import re
 
 Band = namedtuple('Band', ['number', 'energy', 'occupation', 'spin'])
 
