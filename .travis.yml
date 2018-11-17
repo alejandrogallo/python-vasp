@@ -2,7 +2,7 @@ language: python
 
 os:
 - linux
-- windows
+#- windows
 #- osx
 
 python:
