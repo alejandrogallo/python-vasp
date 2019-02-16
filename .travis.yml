@@ -16,14 +16,15 @@ install:
 - pip install pytest
 - pip install pytest-cov
 - pip install .
+- pip install sphinx
 after_success:
 - coveralls
-- mkdir docs
-- echo hello world > docs/index.html
+- cd docs
+- make html
 deploy:
   provider: pages
   skip-cleanup: true
-  local-dir: docs
+  local-dir: docs/build/html/
   keep-history: false
   on:
     repo: alejandrogallo/python-vasp
