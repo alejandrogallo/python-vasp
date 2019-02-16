@@ -1,38 +1,32 @@
 language: python
-
 os:
 - linux
-#- windows
-#- osx
-
 python:
-- "2.6"
-- "2.7"
-- "3.3"
-- "3.4"
-- "3.5"
-- "3.6"
-
+- '2.6'
+- '2.7'
+- '3.3'
+- '3.4'
+- '3.5'
+- '3.6'
 script:
 - python -m pytest vasp tests --cov=vasp
-
 install:
 - pip install setuptools
 - pip install python-coveralls
 - pip install pytest
 - pip install pytest-cov
 - pip install .
-
 after_success:
 - coveralls
 - mkdir docs
 - echo hello world > docs/index.html
-
 deploy:
   provider: pages
   skip-cleanup: true
   local-dir: docs
   #github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: false
+  api_key:
+    secure: EPjh+10K0cosUxtQEuvvrxQaa8cnXkJE6x2G5Fu2q9ZDuCrLYj6rxd65eG9VpZqDZkwWtgibWzdTXfms9H03ewmqgD8AJ4O3sp10zpnwyHq6Z3skksj79z5rddNujP98ZeHPuu+D8VdPMf7t+nVI9bd6Kf/+QgX8iedRCywEwRthdw2mFRxgXyy5CldtwEu0zicvR6XKRI79G/Lhj1IboYKgFMVT+JKhFfn3fYTxnPhbEbqOotxlDzr4heN9uPCv9L+AQmT6rZl+5q6G7hHKrHceI8ydgJYmzkKkQlH89Yuo/dKeUP3fcA6RmK/e5G0LVPvWOy0HdRl8f82ckuVUKCM30hRFOdu7a4Th8osaBrk5w1weDGWhSVnuvenrWK7ADB4mVFW23qE3Tlx0eMYSK4WhvHHIMbrdM2NwYVoxc7lzJbcvEWbVtVu4qoBZlMUn8r78ec5bVr9l8Nwl0lFqtBMq3/zIZDCfxNhIBOEd2f9TBDFJJSWazuDIdKfZbXQUpwX6X9CXQpOjuGmD/X3PXhvT0h3bZXFYZf3zyvN/iCW0ZBNhf93tfdksAuHIXddS8aFExzmTklsB2MB2jS5h/9173TTDD+p9CP92OSRFT9oEpikrDKcjLvbsjqo836A6pTV0Z6BnyMc5FVTwm46dQceWlFL2TkSbwzWcGS6TsCo=
   on:
-    branch: master
+    repo: alejandrogallo/python-vasp
