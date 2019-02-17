@@ -4,10 +4,18 @@ from vasp.parser.kpoint import Kpoint
 
 
 class BandStructure:
+    """
+    This parser accepts an outcar file and parses the ``k-points``
+    inside.
+
+    .. TODO: In the future, let also the posibility of reading from vasprun.xml
+
+    :param outcar: Filepath of an outcar file
+    :type  outcar: str
+    """
 
     def __init__(self, outcar=None):
-        """In the future, let also the posibility of reading from vasprun.xml
-        """
+        #: A list of k-points, see :class:`vasp.parser.kpoint.Kpoint`
         self.kpoints = []
         if outcar is not None:
             with open(outcar) as fd:

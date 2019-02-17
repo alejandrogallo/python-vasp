@@ -16,6 +16,11 @@ K-point
 .. autoclass:: vasp.parser.kpoint.Kpoint
   :members:
 
+BandStructure
+-------------
+.. autoclass:: vasp.parser.band_structure.BandStructure
+  :members:
+
 
 """
 from vasp.parser.chgcar import Chgcar
