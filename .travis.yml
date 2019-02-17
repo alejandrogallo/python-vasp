@@ -16,11 +16,11 @@ install:
 - pip install pytest
 - pip install pytest-cov
 - pip install .
-- pip install sphinx
+- [[ $TRAVIS_PYTHON_VERSION = 2.6 ]] || pip install sphinx
 after_success:
 - coveralls
 - cd docs
-- make html
+- [[ $TRAVIS_PYTHON_VERSION = 2.6 ]] || make html
 deploy:
   provider: pages
   skip-cleanup: true
@@ -28,4 +28,5 @@ deploy:
   keep-history: false
   on:
     repo: alejandrogallo/python-vasp
+    python: '3.6'
   github-token: $GITHUB_TOKEN
