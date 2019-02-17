@@ -6,7 +6,8 @@ from vasp.parser.kpoint import Kpoint
 class BandStructure:
     """
     This parser accepts an outcar file and parses the ``k-points``
-    inside.
+    inside, right now it will parse all the ``k-points``, also if
+    there are several ionic relaxation iterations.
 
     .. TODO: In the future, let also the posibility of reading from vasprun.xml
 
