@@ -8,6 +8,7 @@ python:
 - '3.4'
 - '3.5'
 - '3.6'
+- '3.7'
 script:
 - python -m pytest vasp tests --cov=vasp
 install:
@@ -28,5 +29,4 @@ deploy:
   keep-history: false
   on:
     repo: alejandrogallo/python-vasp
-    python: '3.6'
   github-token: $GITHUB_TOKEN
