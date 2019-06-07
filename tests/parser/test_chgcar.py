@@ -43,3 +43,22 @@ def test_simple_ispin2():
     assert(chgcar.values[1][0] == 11233.567)
     assert(chgcar.values[1][-1] == 123.0069)
 
+
+def test_chgcar():
+    path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        'data', 'CHGCAR'
+    )
+
+    chgcar = Chgcar(path)
+    assert(chgcar.poscar)
+    assert(chgcar.poscar.name == 'unknown system')
+    assert(chgcar.grid == [10, 10, 10])
+    assert(chgcar.nvalues == 10 ** 3)
+
+    assert(chgcar.values)
+    assert(len(chgcar.values) == 1)
+
+    assert(len(chgcar.values[0]) == 10 ** 3)
+    assert(chgcar.values[0][0] == 0.12243538616E+02)
+    assert(chgcar.values[0][-1] == 0.64003393858E+02)
