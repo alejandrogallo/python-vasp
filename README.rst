@@ -14,9 +14,9 @@ Features
 Installation
 ------------
 
-```
-pip install python-vasp
-```
+::
+
+  pip install python-vasp
 
 .. |Pypi| image:: https://badge.fury.io/py/python-vasp.svg
    :target: https://badge.fury.io/py/python-vasp
