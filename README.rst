@@ -11,6 +11,13 @@ Features
 - Documentation automatically updated `here <https://alejandrogallo.github.io/python-vasp/>`_.
 - Features all fully tested.
 
+Installation
+------------
+
+```
+pip install python-vasp
+```
+
 .. |Pypi| image:: https://badge.fury.io/py/python-vasp.svg
    :target: https://badge.fury.io/py/python-vasp
 .. |Build Status| image:: https://travis-ci.org/alejandrogallo/python-vasp.svg?branch=master
