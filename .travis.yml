@@ -15,11 +15,11 @@ install:
 - pip install pytest
 - pip install pytest-cov
 - pip install .
-- if [[ ! $TRAVIS_PYTHON_VERSION = 2.6 ]]; then pip install sphinx; fi
+- pip install sphinx
 after_success:
 - coveralls
 - cd docs
-- if [[ ! $TRAVIS_PYTHON_VERSION = 2.6 ]]; then make html; fi
+- if [[ $TRAVIS_PYTHON_VERSION = 3.6 ]]; then make html; fi
 deploy:
   provider: pages
   skip-cleanup: true
