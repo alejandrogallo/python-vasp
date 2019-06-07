@@ -10,6 +10,7 @@ Features
 - Quite clean and understandably written.
 - Documentation automatically updated `here <https://alejandrogallo.github.io/python-vasp/>`_.
 - Features all fully tested.
+- No dependencies.
 
 Installation
 ------------
