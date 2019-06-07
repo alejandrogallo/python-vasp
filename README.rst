@@ -1,7 +1,15 @@
-Python Vasp |Build Status| |Coveralls| |Pypi| |Code Quality|
+Python Vasp
 ===========
 
-Obscure vasp parser written in python... ?
+|Build Status| |Coveralls| |Pypi| |Code Quality|
+
+
+Features
+--------
+
+- Quite clean and understandably written.
+- Documentation automatically updated `here <https://alejandrogallo.github.io/python-vasp/>`_.
+- Features all fully tested.
 
 .. |Pypi| image:: https://badge.fury.io/py/python-vasp.svg
    :target: https://badge.fury.io/py/python-vasp
@@ -12,5 +20,3 @@ Obscure vasp parser written in python... ?
 .. |Code Quality| image:: https://img.shields.io/lgtm/grade/python/g/alejandrogallo/python-vasp.svg?logo=lgtm&logoWidth=18
    :target: https://lgtm.com/projects/g/alejandrogallo/python-vasp/context:python
 
-Anyways, check out some documentation
-`here <https://alejandrogallo.github.io/python-vasp/>`_
