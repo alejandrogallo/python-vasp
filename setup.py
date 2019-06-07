@@ -6,7 +6,7 @@ with open('README.rst') as fd:
 
 setup(
     name='python-vasp',
-    version='0.1.0',
+    version='0.2.0',
     author='Alejandro Gallo',
     author_email='aamsgallo@gmail.com',
     license='GPLv3',

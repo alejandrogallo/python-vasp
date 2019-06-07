@@ -18,19 +18,8 @@ real_number = re.compile(r'(\+?-?\d+\.?\d*[Ee]?\+?-?\d*)')
 atom_header = re.compile(r' *([a-zA-Z]+) *')
 
 
-def parse_vector(line, length, dtype):
-    m = real_number.findall(line)
-    if not m:
-        raise SyntaxError(
-            'Line "{0}" does not seem to be a vector'.format(line)
-        )
-    elif length is None:
-        return [dtype(i) for i in m]
-    elif len(m) != length:
-        raise SyntaxError(
-            'Line "{0}" is a longer vector than expected ({1})'.format(
-                line, length
-            )
-        )
-    else:
-        return [dtype(m[i]) for i in range(length)]
+def parse_vector(line, length, dtype, delimiter=r"\s+"):
+    assert(isinstance(line, str))
+    m = re.split(delimiter, line.strip())
+    length = length or len(m)
+    return [dtype(m[i]) for i in range(length)]

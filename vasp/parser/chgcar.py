@@ -21,9 +21,10 @@ class Chgcar:
         for line in self.lines:
             try:
                 grid = parse_vector(line, 3, int)
-            except SyntaxError:
+            except ValueError:
                 values.extend(parse_vector(line, None, float))
             else:
+                # if we found again a grid, it means that it is spin polarized
                 assert(self.grid == grid)
                 self.values.append(values)
                 values = []
