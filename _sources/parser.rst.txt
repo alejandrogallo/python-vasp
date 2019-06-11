@@ -1,0 +1,5 @@
+Parsers
+=======
+
+.. automodule:: vasp.parser
+

@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Parsers &#8212; python-vasp 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to python-vasp’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-vasp.parser">
+<span id="parsers"></span><h1>Parsers<a class="headerlink" href="#module-vasp.parser" title="Permalink to this headline">¶</a></h1>
+<p>These are the implementations of the different vasp file parsers.</p>
+<div class="section" id="chgcar">
+<h2>CHGCAR<a class="headerlink" href="#chgcar" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="vasp.parser.chgcar.Chgcar">
+<em class="property">class </em><code class="sig-prename descclassname">vasp.parser.chgcar.</code><code class="sig-name descname">Chgcar</code><span class="sig-paren">(</span><em class="sig-param">chgcar_path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vasp/parser/chgcar.html#Chgcar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vasp.parser.chgcar.Chgcar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="poscar">
+<h2>POSCAR<a class="headerlink" href="#poscar" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="vasp.parser.poscar.Poscar">
+<em class="property">class </em><code class="sig-prename descclassname">vasp.parser.poscar.</code><code class="sig-name descname">Poscar</code><span class="sig-paren">(</span><em class="sig-param">poscar_path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vasp/parser/poscar.html#Poscar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vasp.parser.poscar.Poscar" title="Permalink to this definition">¶</a></dt>
+<dd><p>This poscar parser <em>only</em> parses the poscar, it does not apply
+any transformation or conversion from cartesian into direct or
+otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>poscar_path</strong> (<em>str</em>) – Path to a poscar file</p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vasp.parser.poscar.Poscar.basis">
+<code class="sig-name descname">basis</code><em class="property"> = None</em><a class="headerlink" href="#vasp.parser.poscar.Poscar.basis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Basis elements</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="vasp.parser.poscar.Poscar.constant">
+<code class="sig-name descname">constant</code><em class="property"> = None</em><a class="headerlink" href="#vasp.parser.poscar.Poscar.constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multiplicative constant</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="vasp.parser.poscar.Poscar.coordinates">
+<code class="sig-name descname">coordinates</code><em class="property"> = None</em><a class="headerlink" href="#vasp.parser.poscar.Poscar.coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coordinates</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="vasp.parser.poscar.Poscar.modeline">
+<code class="sig-name descname">modeline</code><em class="property"> = None</em><a class="headerlink" href="#vasp.parser.poscar.Poscar.modeline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wether cartesian or direct</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="vasp.parser.poscar.Poscar.name">
+<code class="sig-name descname">name</code><em class="property"> = None</em><a class="headerlink" href="#vasp.parser.poscar.Poscar.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the system</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="vasp.parser.poscar.Poscar.natoms">
+<code class="sig-name descname">natoms</code><em class="property"> = None</em><a class="headerlink" href="#vasp.parser.poscar.Poscar.natoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of atoms</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="vasp.parser.poscar.Poscar.symbols">
+<code class="sig-name descname">symbols</code><em class="property"> = None</em><a class="headerlink" href="#vasp.parser.poscar.Poscar.symbols" title="Permalink to this definition">¶</a></dt>
+<dd><p>Atomic labels</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="vasp.parser.poscar.Poscar.symbols_number">
+<code class="sig-name descname">symbols_number</code><em class="property"> = None</em><a class="headerlink" href="#vasp.parser.poscar.Poscar.symbols_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Atomic numbers</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="k-point">
+<h2>K-point<a class="headerlink" href="#k-point" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="vasp.parser.kpoint.Kpoint">
+<em class="property">class </em><code class="sig-prename descclassname">vasp.parser.kpoint.</code><code class="sig-name descname">Kpoint</code><span class="sig-paren">(</span><em class="sig-param">lines</em>, <em class="sig-param">spin=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vasp/parser/kpoint.html#Kpoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vasp.parser.kpoint.Kpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a kpoint text in a list of lines, e.g.:
+The spin has to be optional since we do not know in advance from
+the k-point chunk if it’s spin 1 or 2, in vasp parlance.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">k</span><span class="o">-</span><span class="n">point</span>     <span class="mi">1</span> <span class="p">:</span>       <span class="mf">0.5000</span>    <span class="mf">0.5000</span>    <span class="mf">0.5000</span>
+ <span class="n">band</span> <span class="n">No</span><span class="o">.</span>  <span class="n">band</span> <span class="n">energies</span>     <span class="n">occupation</span>
+     <span class="mi">1</span>      <span class="o">-</span><span class="mf">4.1306</span>      <span class="mf">2.00000</span>
+     <span class="mi">2</span>      <span class="o">-</span><span class="mf">1.4815</span>      <span class="mf">2.00000</span>
+     <span class="mi">3</span>       <span class="mf">4.2930</span>      <span class="mf">2.00000</span>
+     <span class="mi">4</span>       <span class="mf">4.2930</span>      <span class="mf">2.00000</span>
+     <span class="mi">5</span>       <span class="mf">7.0479</span>      <span class="mf">0.00000</span>
+     <span class="mi">6</span>       <span class="mf">8.8314</span>      <span class="mf">0.00000</span>
+     <span class="mi">7</span>       <span class="mf">8.8314</span>      <span class="mf">0.00000</span>
+     <span class="mi">8</span>      <span class="mf">13.2218</span>      <span class="mf">0.00000</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lines</strong> (<em>list</em>) – Lines containing an outcar kpoint chunk</p></li>
+<li><p><strong>spin</strong> (<em>parameter_type</em>) – Wether it is spin polarized or no, (<code class="docutils literal notranslate"><span class="pre">ISPIN=1,2</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vasp.parser.kpoint.Kpoint.bands">
+<code class="sig-name descname">bands</code><em class="property"> = None</em><a class="headerlink" href="#vasp.parser.kpoint.Kpoint.bands" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of bands</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="vasp.parser.kpoint.Kpoint.index">
+<code class="sig-name descname">index</code><em class="property"> = None</em><a class="headerlink" href="#vasp.parser.kpoint.Kpoint.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>K-point index</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="vasp.parser.kpoint.Kpoint.spin">
+<code class="sig-name descname">spin</code><em class="property"> = None</em><a class="headerlink" href="#vasp.parser.kpoint.Kpoint.spin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Original <cite>ISPIN</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="vasp.parser.kpoint.Kpoint.value">
+<code class="sig-name descname">value</code><em class="property"> = None</em><a class="headerlink" href="#vasp.parser.kpoint.Kpoint.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>The value of the k-point</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="bandstructure">
+<h2>BandStructure<a class="headerlink" href="#bandstructure" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="vasp.parser.band_structure.BandStructure">
+<em class="property">class </em><code class="sig-prename descclassname">vasp.parser.band_structure.</code><code class="sig-name descname">BandStructure</code><span class="sig-paren">(</span><em class="sig-param">outcar=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vasp/parser/band_structure.html#BandStructure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vasp.parser.band_structure.BandStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>This parser accepts an outcar file and parses the <code class="docutils literal notranslate"><span class="pre">k-points</span></code>
+inside, right now it will parse all the <code class="docutils literal notranslate"><span class="pre">k-points</span></code>, also if
+there are several ionic relaxation iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>outcar</strong> (<em>str</em>) – Filepath of an outcar file</p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vasp.parser.band_structure.BandStructure.kpoints">
+<code class="sig-name descname">kpoints</code><em class="property"> = None</em><a class="headerlink" href="#vasp.parser.band_structure.BandStructure.kpoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of k-points, see <a class="reference internal" href="#vasp.parser.kpoint.Kpoint" title="vasp.parser.kpoint.Kpoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">vasp.parser.kpoint.Kpoint</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">python-vasp</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Parsers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#chgcar">CHGCAR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#poscar">POSCAR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#k-point">K-point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bandstructure">BandStructure</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to python-vasp’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Alejandro Gallo.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/parser.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
